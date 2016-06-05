@@ -1,0 +1,40 @@
+<div class="">
+	<a href="#/templates">Go Back</a>
+	<br><br>
+	<div class="col-md-4">
+		<img class="thumbnail" src="{{mainImage}}" alt="placeholder">
+		<div class="row">
+			<div ng-repeat="image in template.images | limitTo: 4">
+				<div class="col-md-3">
+					<img class="img-full thumbnail" ng-src="{{image.name}}" ng-click="setImage(image)" alt="placeholder">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<h3>{{template.name}}</h3>
+		<p>{{template.description}}</p>
+		<p>Type: {{template.type}}</p>
+		<h4>{{template.price | currency}}</h4>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		  <!-- Identify your business so that you can collect the payments. -->
+		  <input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
+
+		  <!-- Specify a Buy Now button. -->
+		  <input type="hidden" name="cmd" value="_xclick">
+
+		  <!-- Specify details about the item that buyers will purchase. -->
+		  <input type="hidden" name="item_name" value="Hot Sauce-12oz Bottle">
+		  <input type="hidden" name="amount" value="5.95">
+		  <input type="hidden" name="currency_code" value="USD">
+
+		  <!-- Display the payment button. -->
+		  <input type="image" name="submit" border="0"
+		  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+		  alt="PayPal - The safer, easier way to pay online">
+		  <img alt="" border="0" width="1" height="1"
+		  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+		</form>
+	</div>
+</div>
